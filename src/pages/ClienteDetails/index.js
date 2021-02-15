@@ -226,11 +226,7 @@ export default function ClienteDetails() {
                                   <td>{index + 1}</td>
                                   <td>{divida.motivo}</td>
                                   <td>{divida.valor}</td>
-                                  <td>
-                                    {moment(divida.criado).format(
-                                      'DD/MM/YYYY - H:mm'
-                                    )}
-                                  </td>
+                                  <td>{moment(divida.criado).format('lll')}</td>
                                   <td className="text-center">
                                     <button
                                       type="button"

@@ -16,6 +16,7 @@ import swal from 'sweetalert';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
 import { useFormik } from 'formik';
+import moment from 'moment';
 
 import { api, apiDev } from '~/services/api';
 
@@ -225,7 +226,11 @@ export default function ClienteDetails() {
                                   <td>{index + 1}</td>
                                   <td>{divida.motivo}</td>
                                   <td>{divida.valor}</td>
-                                  <td>{divida.criado}</td>
+                                  <td>
+                                    {moment(divida.criado).format(
+                                      'DD/MM/YYYY - H:mm'
+                                    )}
+                                  </td>
                                   <td className="text-center">
                                     <button
                                       type="button"
